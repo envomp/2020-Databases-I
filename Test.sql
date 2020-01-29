@@ -139,4 +139,8 @@ SELECT COUNT(*), FirstName FROM Persons2 GROUP BY FirstName;
 
 SELECT * FROM Persons2 LEFT JOIN Persons ON Persons2.Auto=Persons.PersonID UNION SELECT * FROM Persons2 RIGHT JOIN Persons ON Persons2.Auto=Persons.PersonID; # get all
 
-DROP TABLE Persons;
+SET FOREIGN_KEY_CHECKS = 0;
+drop table if exists Persons;
+drop table if exists Persons2;
+drop table if exists Student;
+SET FOREIGN_KEY_CHECKS = 1;
