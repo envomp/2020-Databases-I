@@ -1,21 +1,10 @@
-version: '3.4'
+version: "3.7"
 
 services:
-
-    database:
-        image: mysql:8.0
-        ports:
-            - "33061:3306"
-        environment:
-            MYSQL_ROOT_USER: root
-            MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: iti0206
-            MYSQL_USER: user
-            MYSQL_PASSWORD: user
-
-    adminer:
-        container_name: adminer
-        image: adminer
-        restart: unless-stopped
-        ports:
-          - "8090:8080"
+    db:
+      image: couchdb
+      ports:
+        - "5984:5984"
+      environment:
+        - COUCHDB_USER=root
+        - COUCHDB_PASSWORD=root
